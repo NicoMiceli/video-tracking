@@ -28,17 +28,18 @@ var vidreq = new Object();
             	lastAction = 'play'
                 actionCount ++
                 console.log('played at the current time: ' + player.getCurrentTime() + " and number of actions so far: " + actionCount);
-                //console.log('play' + " " + player.getVideoUrl()+ " " + player.getCurrentTime());
-                //var startMyInterval=setInterval(function(){myTimer()},1000);
+                //add GA/SiteCatalist Event tracking code here
                 break;
             case YT.PlayerState.ENDED:
                 //TRUE if the user just goes there an plays the video from start to finish
                 if (actionCount < 4) {
                     console.log('you watched ' + player.getVideoUrl() + 'til the end! Action count:' + actionCount);
+                    //add GA/SiteCatalist Event tracking code here
                 } else{
                     lastAction = 'end'
                     actionCount ++
                     console.log('end' + " " + player.getVideoUrl() + " " + actionCount);
+                    //add GA/SiteCatalist Event tracking code here
                 }
                 break;
             case YT.PlayerState.PAUSED:
@@ -47,13 +48,16 @@ var vidreq = new Object();
                     console.log('paused at the current time: ' + player.getCurrentTime() + " and number of actions so far: " + actionCount);
                     lastAction = 'paused';
                     oldTime = player.getCurrentTime();
+                    //add GA/SiteCatalist Event tracking code here
 
                 } else if (actionCount != 0){
                 	jumpedTime = player.getCurrentTime() - oldTime;
                     actionCount ++;
                     console.log('you jumped ' + jumpedTime + " seconds " + actionCount);
+                    //add GA/SiteCatalist Event tracking code here
                 } else {
                     console.log("you started it in the middle at the " + player.getCurrentTime() + " second mark")
+                    //add GA/SiteCatalist Event tracking code here
                 }
                 break;
             }
