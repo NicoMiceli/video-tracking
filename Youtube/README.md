@@ -4,6 +4,7 @@ Video Tracking
 youtube video tracking
 
 **Warning: This is currently being worked on, fork and test with caution.**
+
 **Also Note: Just swap out the console.logs with ga event functions. I will build that in as I get time to work on this more.**
 
 Working events
